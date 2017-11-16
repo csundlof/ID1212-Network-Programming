@@ -32,7 +32,7 @@ public class Game {
 			if(indexes == null)
 			{
 				indexes = new LinkedList<Integer>();
-				characters.put(secretWord.charAt(i), indexes);
+				characters.put(Character.toLowerCase(secretWord.charAt(i)), indexes);
 			}
 			indexes.push(i);
 		}
@@ -60,7 +60,7 @@ public class Game {
 			StringBuilder sb = new StringBuilder(publicWord);
 			for(int i : characters.get(s.charAt(0)))
 			{
-				sb.replace(i, i+1, s);
+				sb.replace(i, i+1, secretWord.substring(i, i+1));
 			}
 			publicWord = sb.toString();
 		}
