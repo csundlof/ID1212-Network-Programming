@@ -8,13 +8,13 @@ package common;
 import java.io.Serializable;
 
 public interface UserDTO extends Serializable {
-    
+
     public String getName();
-    
+
     public String getPassword();
-    
+
     public void ping(String message);
-    
+
     public void setOutputHandler(OutputHandler oh);
-    
+
 }

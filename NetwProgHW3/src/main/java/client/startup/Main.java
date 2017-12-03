@@ -13,8 +13,8 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
 public class Main {
-    
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         try {
             FileExplorer fileExplorer = (FileExplorer) Naming.lookup(FileExplorer.FILESERVER_NAME_IN_REGISTRY);
             new Console().start(fileExplorer);
@@ -22,5 +22,5 @@ public class Main {
             System.out.println("Could not start client.");
         }
     }
-    
+
 }

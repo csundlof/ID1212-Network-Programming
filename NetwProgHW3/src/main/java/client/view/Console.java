@@ -15,18 +15,17 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Console implements Runnable  {
+public class Console implements Runnable {
 
-    
     private final ScreenWriter screen;
     private static final String fileHeader = "FILENAME OWNER PUBLIC/PRIVATE SIZE READ/WRITE";
     //private Controller controller;
     private FileExplorer fileExplorer;
 
-    public Console() throws RemoteException{
+    public Console() throws RemoteException {
         screen = new ScreenWriter();
     }
-    
+
     public void start(FileExplorer fileExplorer) {
         new Thread(screen).start();
         this.fileExplorer = fileExplorer;
@@ -250,7 +249,7 @@ public class Console implements Runnable  {
                     + "subscribe file1 file2 file3 .., rename file newname, resize file size,\n"
                     + " permissions file <publically readable? true/false> <publically writable true/false>");
         } catch (RemoteException ex) {
-             ex.printStackTrace();
+            ex.printStackTrace();
         }
     }
 }

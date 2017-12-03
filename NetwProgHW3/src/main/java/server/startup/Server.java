@@ -15,7 +15,8 @@ import server.controller.Controller;
 import server.integration.FileDBException;
 
 public class Server {
-    private String fileServerName =  FileExplorer.FILESERVER_NAME_IN_REGISTRY;
+
+    private String fileServerName = FileExplorer.FILESERVER_NAME_IN_REGISTRY;
     private String datasource = "FileServer";
     private String dbms = "derby";
 

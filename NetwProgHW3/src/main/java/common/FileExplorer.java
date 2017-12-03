@@ -25,7 +25,7 @@ public interface FileExplorer extends Remote {
     public boolean rename(String name, String newName, UserDTO user) throws RemoteException;
 
     public boolean resize(String name, int newSize, UserDTO user) throws RemoteException;
-    
+
     public boolean changePermissions(String name, FilePermissions permissions, UserDTO user) throws RemoteException;
 
     public ArrayList<FileData> listFiles(UserDTO user) throws RemoteException;

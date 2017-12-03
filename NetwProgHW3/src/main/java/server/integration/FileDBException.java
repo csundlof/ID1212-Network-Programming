@@ -6,12 +6,12 @@
 package server.integration;
 
 public class FileDBException extends Exception {
-    
-    public FileDBException(String reason){
+
+    public FileDBException(String reason) {
         super(reason);
     }
-    
-    public FileDBException(String reason, Throwable rootCause){
+
+    public FileDBException(String reason, Throwable rootCause) {
         super(reason, rootCause);
     }
 }

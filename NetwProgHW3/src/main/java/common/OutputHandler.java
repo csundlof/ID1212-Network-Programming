@@ -9,5 +9,6 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface OutputHandler extends Remote {
+
     public void print(String output) throws RemoteException;
 }

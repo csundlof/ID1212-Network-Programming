@@ -9,36 +9,30 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class ScreenWriter extends UnicastRemoteObject implements Runnable, OutputHandler, Serializable {
 
-	private static final BlockingQueue<String> stringsToPrint = new LinkedBlockingQueue<>();
-	
-        public ScreenWriter() throws RemoteException{
-            
+    private static final BlockingQueue<String> stringsToPrint = new LinkedBlockingQueue<>();
+
+    public ScreenWriter() throws RemoteException {
+
+    }
+
+    @Override
+    public synchronized void print(String output) throws RemoteException {
+        try {
+            stringsToPrint.put(output);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        
-        @Override
-	public synchronized void print(String output) throws RemoteException
-	{
-		try{
-			stringsToPrint.put(output);
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
-	
-	@Override
-	public void run() {
-		while(true)
-		{
-			try{
-				System.out.println(stringsToPrint.take());
-			}
-			catch(Exception e)
-			{
-				e.printStackTrace();
-			}
-		}
-	}
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                System.out.println(stringsToPrint.take());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }
