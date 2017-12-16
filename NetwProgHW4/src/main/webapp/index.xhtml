@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:head>
+        <title>Currency Converter</title>
+    </h:head>
+    <h:body>
+        <h1>Currency Converter</h1>
+        <h3>#{converter.result}</h3>
+        <h:form>
+            <p>Supported currencies:
+                <ui:repeat value="#{converter.currencies}" var="currency">
+                    #{currency}
+                </ui:repeat> 
+            </p>
+            <p>
+                <h:outputLabel for="fromCurrency" value="Please select currency to convert from"/>
+                <h:inputText id="FromCurrency" value="#{converter.fromCurrency}"/>
+            </p>
+            <p>
+                <h:outputLabel for="targetCurrency" value="Please select currency to convert to"/>
+                <h:inputText id="targetCurrency" value="#{converter.targetCurrency}"/>
+            </p>     
+            <p>
+                <h:outputLabel for="conversionAmount" value="Amount to convert: "/>
+                <h:inputText id="conversionAmount" value="#{converter.conversionAmount}"/>
+            </p>
+            <p>
+                <h:commandButton value="Convert" action="#{converter.convert}"/>
+            </p>
+            
+        </h:form>
+    </h:body>
+</html>
