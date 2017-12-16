@@ -9,6 +9,8 @@ import integration.ExchangeDAO;
 import java.util.ArrayList;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import model.ExchangeRate;
 import model.Exchanger;
 
@@ -16,6 +18,7 @@ import model.Exchanger;
  *
  * @author ADMIN
  */
+@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 @Stateless
 public class Controller {
 
