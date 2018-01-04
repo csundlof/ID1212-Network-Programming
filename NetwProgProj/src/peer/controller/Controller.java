@@ -58,10 +58,4 @@ public class Controller {
 		});
 	}
 
-	public void mergePeers() {
-		CompletableFuture.runAsync(() -> {
-			connection.mergePeers();
-		});
-	}
-
 }
